@@ -2,7 +2,8 @@
 #include <chrono>
 #include <random>
 
-class randomDevice {
+class randomDevice
+{
     private:
         unsigned long seed;
         std::default_random_engine engine;
@@ -21,7 +22,8 @@ randomDevice::randomDevice()
     engine.seed(_seed);
 }
 
-int randomDevice::randInt(int min, int max){
+int randomDevice::randInt(int min, int max)
+{
     std::uniform_int_distribution<int> distribution(min,max);
     int rand_num = distribution(engine);
     return rand_num;
@@ -52,7 +54,7 @@ int main()
             tries++;
         }
     }
-    while(guess != rand_int);
+    while (guess != rand_int);
 
     std::cout << "Congratulations! You got it in " << tries << " attempts.\n";
     return 0;
